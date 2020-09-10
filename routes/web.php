@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PostsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,14 +13,6 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/posts/{post}', function ($post) {
-    $posts = [
-        'my-first-post' => 'Hello, this is my first blog post',
-        'my-second-post' => 'now I am getting the hang of this blogging thing'
-    ];
-    
-    return view('post', [
-        'post' => $posts[$post]
-    ]);
-});
+// Doesn't work anymore this type of route
+// Route::get('/posts/{post}', 'PostsController@show');
+Route::get('/posts/{post}', [PostsController::class, 'show']);
