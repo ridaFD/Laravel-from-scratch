@@ -13,10 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('test', function () {
-    $name = request('name');
-
-    return view('test', [
-        'name' => $name
+Route::get('/posts/{post}', function ($post) {
+    $posts = [
+        'my-first-post' => 'Hello, this is my first blog post',
+        'my-second-post' => 'now I am getting the hang of this blogging thing'
+    ];
+    
+    return view('post', [
+        'post' => $posts[$post]
     ]);
 });
