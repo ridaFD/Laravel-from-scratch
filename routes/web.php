@@ -14,5 +14,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 // Doesn't work anymore this type of route
-// Route::get('/posts/{post}', 'PostsController@show');
 Route::get('/posts/{post}', [PostsController::class, 'show']);

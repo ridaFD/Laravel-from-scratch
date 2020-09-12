@@ -3,18 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
+use App\Models\Post;
 
 class PostsController extends Controller
 {
-    public function show($post) {
-
-        $posts = [
-            'my-first-post' => 'Hello, this is my first blog post',
-            'my-second-post' => 'now I am getting the hang of this blogging thing'
-        ];
+    public function show($slug)
+    {
+        // $post = Post::where('slug', $slug)->firstOrFail();
     
         return view('post', [
-            'post' => $posts[$post]
+            'post' => $post = Post::where('slug', $slug)->firstOrFail()
         ]);
     }
 }
