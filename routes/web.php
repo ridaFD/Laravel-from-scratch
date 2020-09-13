@@ -14,4 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 // Doesn't work anymore this type of route
-Route::get('/posts/{post}', [PostsController::class, 'show']);
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('/about', function () {
+    return view('about');
+});
