@@ -125,6 +125,9 @@ ul.style1 li:first-child
 {
 	padding-top: 0;
 	border-top: none;
+	display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 ul.style1 .image-left
@@ -560,7 +563,7 @@ ul.contact li a.icon-rss:before
 	#content
 	{
 		float: left;
-		width: 700px;
+		width: 50%;
 	}
 
 /*********************************************************************************/
@@ -570,7 +573,7 @@ ul.contact li a.icon-rss:before
 	#sidebar
 	{
 		float: right;
-		width: 420px;
+		width: 50%;
 	}
 
 	#stwo-col

@@ -17,8 +17,8 @@ Released   : 20140225
 <meta name="keywords" content="" />
 <meta name="description" content="" />
 <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
-<link href="/default.css" rel="stylesheet" />
-<link href="/fonts.css" rel="stylesheet" />
+<link href="{{ asset('css/app.css') }}" rel="stylesheet" />
+<link href="{{ asset('css/fonts.css') }}" rel="stylesheet" />
 
 {{-- Bootstrap link --}}
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
@@ -45,7 +45,7 @@ Released   : 20140225
 </div>
     @yield('content')
     <div id="copyright" class="container">
-        <p>&copy; Untitled. All rights reserved. | Photos by <a href="http://fotogrph.com/">Fotogrph</a> | Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>.</p>
-    </div>
+		<p>&copy; Untitled. All rights reserved. | Photos by <a href="http://fotogrph.com/">Fotogrph</a> | Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>.</p>
+	</div>
 </body>
 </html>

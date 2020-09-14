@@ -21,12 +21,14 @@ Route::get('/', function () {
 });
 
 Route::get('about', function () {
-    $articles = Article::latest()->get();
+    $articles = Article::all()->take(4);
 
     return view('about', [
         'articles' => $articles
     ]);
 });
 
-Route::get('articles', [ArticleController::class, 'index']);
-Route::get('articles/{id}', [ArticleController::class, 'show']);
+Route::get('/articles', [ArticleController::class, 'index']);
+Route::post('/articles', [ArticleController::class, 'store']);
+Route::get('/articles/create', [ArticleController::class, 'create']);
+Route::get('/articles/{id}', [ArticleController::class, 'show']);

@@ -21,4 +21,22 @@ class ArticleController extends Controller
             'article' => $article
         ]);
     }
+
+    public function create () {
+        return view('articles.create');
+    }
+
+    public function store () {
+        // dump(request()->all());
+        $article = new Article();
+
+        $article->title = request('title');
+        $article->caption = request('caption');
+        $article->body = request('body');
+
+        $article->save();
+
+        return redirect('/articles');
+
+    }
 }
