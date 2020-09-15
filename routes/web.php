@@ -28,9 +28,9 @@ Route::get('about', function () {
     ]);
 });
 
-Route::get('/articles', [ArticleController::class, 'index']);
+Route::get('/articles', [ArticleController::class, 'index'])->name('articles.index');
 Route::post('/articles', [ArticleController::class, 'store']);
 Route::get('/articles/create', [ArticleController::class, 'create']);
-Route::get('/articles/{id}', [ArticleController::class, 'show']);
-Route::get('/articles/{id}/edit', [ArticleController::class, 'edit']);
-Route::put('/articles/{id}', [ArticleController::class, 'update']);
+Route::get('/articles/{article}', [ArticleController::class, 'show'])->name('articles.show');
+Route::get('/articles/{article}/edit', [ArticleController::class, 'edit']);
+Route::put('/articles/{article}', [ArticleController::class, 'update']);
