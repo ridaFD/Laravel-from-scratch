@@ -19,4 +19,8 @@ class Article extends Model
     public function user() {
         return $this->belongsTo('App\Models\User'); // select * from user where Article_id = 1
     }
+
+    public function tags() {
+        return $this->belongsToMany('App\Models\Tag');
+    }
 }
