@@ -15,6 +15,7 @@
                     <p>{{ $article->body }}</p>
 
                     <p>
+                        {{ $article }}
                         {{ $article->tags }}
                         @foreach ($article->tags as $tag)
                             <a href="{{ route('articles.index', ['tag' => $tag->name]) }}">{{ $tag->name }}</a>

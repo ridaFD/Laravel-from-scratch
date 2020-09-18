@@ -30,13 +30,19 @@ class ArticleController extends Controller
     }
 
     public function create () {
-        return view('articles.create');
+
+        return view('articles.create', [
+            'tags' => Tag::all()
+        ]);
     }
 
     public function store () {
-        // dump(request()->all());
 
-        Article::create($this->validateArticle());
+        $article = new Article($this->validateArticle());
+        $article -> user_id = 1;
+        $article->save();
+
+        // dump(request()->all());
 
         return redirect(route('articles.index'));
     }

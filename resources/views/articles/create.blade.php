@@ -42,8 +42,25 @@
             <text name="" id="" cols="30" rows="10" class='text-danger' >{{ $errors->first('body') }}</text>
           @enderror
         </div>
+
+
+
+        <div class="w-50">
+          <select class="custom-select" name="tags[]" multiple>
+            @foreach ($tags as $tag)
+              <option selected value="{{ $tag->id }}">{{ $tag->name }}</option>              
+            @endforeach
+          </select>
+        </div>
+
+        <br>
+        <br>
+
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
+
+
+     
     
 </div>
 @endsection
